@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+<script type="text/javascript" src="/Project2/js/cart.js"></script>   
+<script type="text/javascript" src="/Project2/js/SortAndSearch.js"></script>   
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+   	<link rel="stylesheet" type="text/css" href="/Project2/Style/SortAndSearch.css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <meta name="author" content="Cher Huang, G">
+</head>
+<body>
+<nav id="head-navbar" class="navbar navbar-dark bg-info fixed-top">
+      <ul class="nav navbar-nav">
+              <li><a class="nav-link topnav active" href="SortAndSearch.html">Search</a></li>
+               <li><a class="nav-link" href="browse.html">Browse
+              </a> </li>
+        
+               <li><a class="nav-link" href="cart.html">My Shopping Cart</a></li>
+           
+               <li><a class="nav-link" href="login.html">Logout</a></li>
+           
+        </ul>
+    </nav>
+     <div style="margin-top:175px" class="spacer">
+    &nbsp;
+   </div>
+<div id="movies">
+	<div id="content">
+		<h1>Your Shopping Cart</h1>
+		<!-- <form id="shopping-cart"> -->
+			<table class="shopping-cart">
+			  <thead>
+				<tr>
+					<th scope="col">Item</th>
+					<th scope="col">Qty</th>
+					<th scope="col">Delete</th>
+				</tr>
+			  </thead>
+			  <tbody id="cartBody">
+			  	<tr id="" class="toclone hidden">
+			  		<th id="id"></th>
+			  		<th id="qty">
+			  			<input type="text" name="qty" style="display:none;">
+			  			<button style="display:none;">Update</button>
+			  		</th>
+			  		<th><button style="display:none;" id="cancel">X</button></th>
+			  	</tr>
+			  </tbody>
+			</table>
+			<p id="sub-total">
+				<strong>Sub Total</strong>: <span id="stotal"></span>
+			</p>
+			<ul id="shopping-cart-actions">
+				<li>
+					<input type="submit" name="delete" id="empty-cart" class="btn" value="Empty Cart" onClick="deleteAll()"/>
+				</li>
+				<li>
+					<a href="SortAndSearch.html" class="btn">Continue Shopping</a>
+				</li>
+				<li>
+					<a href="checkout.html" class="btn">Go To Checkout</a>
+				</li>
+			</ul>
+		<!-- </form> -->
+	</div>
+</div>
+<script>
+	var url_string = window.location.href;
+	var url = new URL(url_string);
+	var qty = parseInt(url.searchParams.get("qty-1"));
+	var id = url.searchParams.get("movieid");
+	console.log(id, qty);
+	var idJSON = sessionStorage.getItem("movieIds");
+	console.log(idJSON);
+	if (idJSON){
+		for(var i=0;i<qty;i++){
+			idJSON+=","+id;	
+		}
+	}
+	else{
+		idJSON = id;
+		for(var i=1;i<qty;i++){
+			idJSON+=","+id;	
+		}
+	}
+	sessionStorage.setItem("movieIds", idJSON);
+	disp = {}
+	splits = idJSON.split(",");
+	for(var i=0;i<splits.length;i++){
+		if(disp[splits[i]]){
+			disp[splits[i]]+=1;
+		}
+		else{
+			disp[splits[i]]=1;
+		}
+	}
+			
+	jQuery.each(disp, function(movieID, qty) {
+		var toappend = $(".toclone").clone();
+		toappend.find("#id").text(movieID);
+		toappend.find("#qty").find("input").val(qty);
+		toappend.find("#qty").find("input").css("display","inline").attr("id","qty-"+movieID);
+		toappend.find("#qty").find("button").css("display","inline").attr("onClick","qtyUpdate('"+movieID+"')");
+		toappend.find("#cancel").css("display","inline").attr("onClick","deleteItems('"+movieID+"',0)");
+		toappend.removeClass("hidden").removeClass("toclone");
+		jQuery("#cartBody").append(toappend);
+	});
+	
+	function deleteItems(movID, newVal){
+		splits = idJSON.split(",");
+		var diff = disp[movID]-newVal;
+		var i=0;
+		while(diff>0){
+			if (splits[i]==movID){
+				splits.splice(i,1);
+				diff--;
+			}
+			else
+				i++;
+		}
+		idJSON = splits.join();
+		if(newVal == 0){
+			$("#qty-"+movID).parent().parent().remove();
+		}
+		disp[movID]=newVal;
+		sessionStorage.setItem("movieIds", idJSON);
+	}
+	
+	function qtyUpdate(movID){
+		newVal = $("#qty-"+movID).val();
+			
+		if(disp[movID]<newVal){
+			var diff = newVal-disp[movID];
+			for(;diff>0;diff--)
+				idJSON+=","+movID;
+			disp[movID]=newVal;
+			sessionStorage.setItem("movieIds", idJSON);
+		}
+		else if(disp[movID]>newVal){
+			deleteItems(movID, newVal);
+		}
+		else{
+			alert("Same value has been entered");
+		}
+	}
+	
+	function deleteAll(){
+		sessionStorage.setItem("movieIds", "");
+		disp = {}
+		idJSON = "";
+		$("#cartBody").not('tr:first').remove();
+	}
+</script>
+<!-- <script type="text/javascript" src="./cartUpdates.js"></script> -->
+</body>
+</html>

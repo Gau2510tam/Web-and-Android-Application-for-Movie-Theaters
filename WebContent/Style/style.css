@@ -1,0 +1,346 @@
+/*.form-control {
+    background-image: url('https://res.cloudinary.com/dt9b7pad3/image/upload/v1502810110/angle-down-dark_dkyopo.png');
+    background-position: right center 5px;
+  }
+*/
+
+@media only screen and (min-width: 180px) and (max-width: 374px) {
+    .search {padding-top:20%;}
+}
+@media only screen and (min-width: 374px) and (max-width: 480px) {
+    .search {padding-top:25px;}
+}
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+    .search {padding-top:20px;}
+}
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    .search {padding-top:30px;;}
+}
+@media only screen and (min-width: 959px) {
+    .search {padding-top:20px;}
+}
+
+#map-container{
+    height: 350px;
+}
+
+#googleMap{
+    height: 100%;
+    width:100%;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
+/*
+ * Specific styles of signin component
+ */
+/*
+ * General styles
+ */
+ html {
+    background-color: #fff;
+    margin: 0 auto;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));
+}
+
+#canvas {
+    width:100%;
+    height:700px;
+ /*   overflow: hidden;*/
+    position:absolute;
+    top:0;
+    left:0;
+    background-color: #1a1724; 
+}
+
+.canvas-wrap{
+    position:relative;
+    
+}
+div.canvas-content{
+    position:relative;
+    z-index:2000;
+    color:#fff;
+    text-align:center;
+    padding-top:30px;
+}
+
+
+.card-container.card {
+    max-width: 350px;
+    padding: 40px 40px;
+}
+
+.btn {
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+/*
+ * Card component
+ */
+.card {
+    background-color: #F7F7F7;
+    /* just in case there no content*/
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 50px;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img-card {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+/*
+ * Form styles
+ */
+.profile-name-card {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 0;
+    min-height: 1em;
+}
+
+.navbar-brand {
+    font-family: Merriweather script=all rev=2;
+    font-weight: 700;
+    font-color:white; 
+    font-style: italic;
+
+}
+
+.reauth-email {
+    display: block;
+    color: #404040;
+    line-height: 2;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin #inputEmail,
+.form-signin #inputPassword {
+    direction: ltr;
+    height: 44px;
+    font-size: 16px;
+}
+
+.form-signin input[type=email],
+.form-signin input[type=password],
+.form-signin input[type=text],
+.form-signin button {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin .form-control:focus {
+    border-color: rgb(104, 145, 162);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+}
+
+.logoText {
+    font-family: "Merriweather", sans;
+    font-weight: 700;
+    font-style: italic; 
+    font-size: 100px;
+    text-align: center;
+    position: relative;
+    color: white;
+}
+
+.btn.btn-signin {
+    /*background-color: #4d90fe; */
+    background-color: rgb(104, 145, 162);
+    /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+    padding: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 36px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+}
+
+.btn.btn-signin:hover,
+.btn.btn-signin:active,
+.btn.btn-signin:focus {
+    background-color: rgb(12, 97, 33);
+}
+
+.forgot-password {
+    color: rgb(104, 145, 162);
+    font-size: 12px;
+}
+
+.forgot-password:hover,
+.forgot-password:active,
+.forgot-password:focus{
+    color: rgb(12, 97, 33);
+}
+
+.btn-google{
+    background-color:#d2d2d2;
+}
+
+/* 3D BUTTON CSS STARTS HERE*/
+* {
+  box-sizing: border-box;
+}
+
+.button {
+  font-size: 8vw;
+  border: none;
+  background-color: rgb(235,235,240); /*shadow for left button */ 
+  user-select: none;
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  margin: 0 auto;
+  width: 150px;
+  height: 70px;
+  font-size: 14px;
+
+}
+
+.button:focus, 
+.button:active { /* important no ugly blue outlien */ 
+    outline: none;    
+}
+
+.button:hover .button__inner,
+.button:focus .button__inner{ /*important movement */
+    transform: translate3D(0, -10px, 0);
+}
+
+.button:hover .button__inner, /*left button on hover color*/
+.button:focus .button__inner {
+    background-color: #fff;
+}
+
+.button:active,
+.button:before {
+  transform: translate3D(0, 0, 0);  
+}
+.button:active .button__inner {
+    transform: translate3D(0, 0, 0);
+}
+
+.button .button__inner {
+    color: #333;
+/*    padding: 1em 1.5em;*/ /* makes text centered and stacked */ 
+    background-color: #fbfbfb;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0,.90,.13,.90);
+    position: relative;
+}
+
+.button:before {
+    content: "";
+    position: relative;
+    z-index: -1;
+    width: 10px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,10,50,0.4);
+    transition: transform 0.6s cubic-bezier(0,.90,.13,.90);
+    transform: translate3D(0, 0, 0);
+
+}
+
+.button:after {
+    content: "";
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgb(235,235,240); /* left button shadow*/ 
+    z-index: -1;
+}
+
+.button--secondary {
+    background-color: #00d18e;
+    z-index: 0;
+      border-radius: 25px;
+}
+
+.button--secondary .button__inner{ /* makes button green */ 
+    background-color: #40ffb2;
+}
+
+.button--secondary:after {
+    background-color: #00d18e;
+}
+
+.button--secondary:hover .button__inner, /* keeps green button green on hover */ 
+.button--secondary:focus .button__inner {
+  background-color: #11ffb3;
+}
+
+#button_container{
+    background-color: #fbfbfb;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    width: 400px;
+    background: transparent;
+}
+
+label {
+text-align: right;
+    clear: both;
+    float:left;
+    margin-right:15px;
+}

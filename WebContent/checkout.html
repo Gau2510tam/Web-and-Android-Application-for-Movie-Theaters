@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Checkout</title>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script type="text/javascript" src="/Project2/js/cart.js"></script>    
+   	<link rel="stylesheet" type="text/css" href="/Project2/Style/SortAndSearch.css">
+</head>
+<body>
+<nav id="head-navbar" class="navbar navbar-dark bg-info fixed-top">
+      <ul class="nav navbar-nav">
+              <li><a class="nav-link topnav active" href="SortAndSearch.html">Search</a></li>
+               <li><a class="nav-link" href="browse.html">Browse
+              </a> </li>
+        
+               <li><a class="nav-link" href="cart.html">My Shopping Cart</a></li>
+           
+               <li><a class="nav-link" href="login.html">Logout</a></li>
+           
+        </ul>
+    </nav>
+     <div style="margin-top:175px" class="spacer">
+    &nbsp;
+   </div>
+   <font id="errorMsg" color=red style="display:none"> The entered details are incorrect </font>
+<table id="checkout-cart" class="shopping-cart">
+    <thead>
+        <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Qty</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+
+
+<FORM>    
+<h2>Your Details</h2>
+<fieldset id="fieldset-billing">
+<legend>Billing</legend>
+                <!-- Name, Email, City, Address, ZIP Code, Country (select box) -->
+
+<div>
+    <label for="fname">First Name</label>
+    <input type="text" name="fname" id="fname" data-type="string" data-message="This field may not be empty" />
+</div>
+
+<div>
+    <label for="lname">Last Name</label>
+    <input type="text" name="lname" id="lname" data-type="string" data-message="This field may not be empty" />
+</div>
+
+<div>
+    <label for="email">Email</label>
+    <input type="text" name="email" id="email" data-type="expression" data-message="Not a valid email address" />
+</div>
+
+<div>
+    <label for="ccid">Credit Card</label>
+    <input type="text" name="ccid" id="ccid" data-type="expression" data-message="This field may not be empty" />
+</div>
+
+<div>
+    <label for="address">Address</label>
+        <input type="text" name="address" id="address" data-type="string" data-message="This field may not be empty" />
+</div>
+
+
+</fieldset>
+
+<p><input value="Submit" id="submit-order" class="btn" onclick="checkout()"/></p>
+
+</form>
+</body>
+<script>
+	function handler(result){
+		console.log(result);
+		var result= result["responseText"];
+		if (result=="0")
+			$("#errorMsg").show();
+		else{
+			$("#errorMsg").hide();
+		document.location = "/Project2/order.html"
+		}	
+	}
+	function checkout(){
+		var fname = $("#fname").val();
+		var lname = $("#lname").val();
+		var ccid = $("#ccid").val();
+		var email = $("#email").val();
+		var address = $("#address").val();
+		var idJSON = sessionStorage.getItem("movieIds");
+		var splits = idJSON.split(",");
+		console.log(splits);
+		console.log(fname,lname,ccid,email,address);
+		jQuery.ajax({
+		  dataType: "json",
+			  method: "POST",
+			  data:{fname:fname, lname:lname, email:email, ccid:ccid, address:address,movieIDs:idJSON},
+			  url: "/Project2/Checkout",
+			  complete: (resultData) => handler(resultData)
+		});
+	}
+</script>
+</html>

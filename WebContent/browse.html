@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Browsw by Genres for BestMovies.com">
+    <!--for Bootstrap modal-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+   	<link rel="stylesheet" type="text/css" href="/Project2/Style/SortAndSearch.css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <meta name="author" content="Cher Huang, G">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script type="text/javascript" src="/Project2/js/cart.js"></script>    
+    <title>Browse by Genres or Title</title>
+</head>
+
+<body>
+<nav id="head-navbar" class="navbar navbar-dark bg-info fixed-top">
+      <ul class="nav navbar-nav">
+              <li><a class="nav-link topnav active" href="SortAndSearch.html">Search</a></li>
+               <li><a class="nav-link" href="browse.html">Browse
+              </a> </li>
+ 
+               <li><a class="nav-link" href="cart.html">My Shopping Cart</a></li>
+           
+               <li><a class="nav-link" href="login.html">Logout</a></li>
+           
+        </ul>
+    </nav>
+     <div style="margin-top:175px" class="spacer">
+    &nbsp;
+   </div>
+  <div id="movies">
+    <button class="sort" data-sort="name" id="btitle">
+      Browse by title
+    </button>
+    <button class="sort" data-sort="genres" id="bgenre">
+      Browse by genres
+    </button>
+    <br/><br/>
+  <div id="alphabets" style="display:inline;">
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('A')">A</button> 	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('B')">B</button>	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('C')">C</button>  	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('D')">D</button>  	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('E')">E</button>  	  	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('F')">F</button>  	  	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('G')">G</button>  	  	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('H')">H</button>  	  	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('I')">I</button>  	  	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('J')">J</button>  	  	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('K')">K</button>  	  	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('L')">L</button>  	  	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('M')">M</button>  	  	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('N')">N</button>  	  	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('O')">O</button>  	  	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('P')">P</button>  	  	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('Q')">Q</button>  	  	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('R')">R</button>  	  	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('S')">T</button>  	  	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('U')">U</button>  	  	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('V')">V</button>  	  	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('W')">W</button>  	  	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('X')">X</button>  	  	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('Y')">Y</button>  	  	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('Z')">Z</button> 
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('0')">0</button> 	  	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('1')">1</button> 
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('2')">2</button> 
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('3')">3</button>  	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('4')">4</button> 	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('5')">5</button> 	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('6')">6</button> 	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('7')">7</button> 
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('8')">8</button> 	
+<button style="padding: 2px 10px;margin: 5px;" onClick="browse('9')">9</button> 
+</div>
+
+  <div id="genres" style="display:none;">
+<button style="padding: 2px 10px;margin: 5px;" onClick="Gbrowse('Action')">Action</button> 
+<button style="padding: 2px 10px;margin: 5px;" onClick="Gbrowse('Adult')">Adult</button> 
+<button style="padding: 2px 10px;margin: 5px;" onClick="Gbrowse('Adventure')">Adventure</button> 
+<button style="padding: 2px 10px;margin: 5px;" onClick="Gbrowse('Animation')">Animation</button> 
+<button style="padding: 2px 10px;margin: 5px;" onClick="Gbrowse('Biography')">Biography</button> 
+<button style="padding: 2px 10px;margin: 5px;" onClick="Gbrowse('Comedy')">Comedy</button> 
+<button style="padding: 2px 10px;margin: 5px;" onClick="Gbrowse('Crime')">Crime</button> 
+<button style="padding: 2px 10px;margin: 5px;" onClick="Gbrowse('Documentary')">Documentary</button> 
+<button style="padding: 2px 10px;margin: 5px;" onClick="Gbrowse('Drama')">Drama</button> 
+<button style="padding: 2px 10px;margin: 5px;" onClick="Gbrowse('Family')">Family</button> 
+<button style="padding: 2px 10px;margin: 5px;" onClick="Gbrowse('Fantasy')">Fantasy</button> 
+<button style="padding: 2px 10px;margin: 5px;" onClick="Gbrowse('History')">History</button> 
+<button style="padding: 2px 10px;margin: 5px;" onClick="Gbrowse('Horror')">Horror</button> 
+<button style="padding: 2px 10px;margin: 5px;" onClick="Gbrowse('Music')">Music</button> 
+<button style="padding: 2px 10px;margin: 5px;" onClick="Gbrowse('Musical')">Musical</button> 
+<button style="padding: 2px 10px;margin: 5px;" onClick="Gbrowse('Mystery')">Mystery</button> 
+<button style="padding: 2px 10px;margin: 5px;" onClick="Gbrowse('Reality-TV')">Reality-TV</button> 
+<button style="padding: 2px 10px;margin: 5px;" onClick="Gbrowse('Romance')">Romance</button> 
+<button style="padding: 2px 10px;margin: 5px;" onClick="Gbrowse('Sci-Fi')">Sci-Fi</button> 
+<button style="padding: 2px 10px;margin: 5px;" onClick="Gbrowse('Sport')">Sport</button> 
+<button style="padding: 2px 10px;margin: 5px;" onClick="Gbrowse('Thriller')">Thriller</button> 
+<button style="padding: 2px 10px;margin: 5px;" onClick="Gbrowse('War')">War</button> 
+<button style="padding: 2px 10px;margin: 5px;" onClick="Gbrowse('Western')">Western</button> 
+</div>
+    <table id=search_table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Year</th>
+				<th>Director</th>
+				<th>Rating</th>
+                <th>Genres</th>
+                <th>Stars</th>
+          </tr>
+		</thead>
+		<tbody id=search_table_body>
+		</tbody>
+	</table>
+  
+  </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+<script type="text/javascript">
+	$("#btitle").click(function(){
+		$("#genres").hide();
+		$("#alphabets").css("display","inline");
+	});
+	$("#bgenre").click(function(){
+		$("#alphabets").hide();
+		$("#genres").css("display","inline");
+	});
+	function handleResult(resultData, text) {
+		console.log(resultData);
+		console.log("SearchResult: populating movie table from resultData");
+		console.log(text.length)
+		var result= resultData["responseText"].substring(text.length);
+		console.log(result);
+		var data = JSON.parse(result);
+		console.log(data);
+		$("#search_table_body").html("");
+		var searchBodyElement = jQuery("#search_table_body");
+		for (var i = 0; i < data.length; i++) 
+		{
+			var rowHTML = "";
+			rowHTML += "<tr>";
+			rowHTML += "<th><a href='/Project2/singleMovie.html?movieId="+data[i]["id"]+"'>" + data[i]["title"] + "</a></th>";
+			rowHTML += "<th>" + data[i]["year"] + "</th>";
+			rowHTML += "<th>" + data[i]["director"] + "</th>";
+			rowHTML += "<th>" + data[i]["rating"] + "</th><th>";
+			for (var j = 0; j <data[i]["genres"].length; j++)
+			{
+				rowHTML += "" + data[i]["genres"][j]["genre"] + "  ";
+			}
+			rowHTML += "</th>";
+			
+			rowHTML += "<th>";
+
+			for (var k = 0; k <data[i]["stars"].length; k++)
+			{
+				rowHTML += "<a href='/Project2/SingleStar.html?starId="+data[i]["stars"][k]["starId"]+"'>" + data[i]["stars"][k]["star"] + "</a>  ";
+			}
+			
+			rowHTML += "</th></tr>"
+			searchBodyElement.append(rowHTML);
+		}
+	}
+	function browse(alpha){
+		console.log(alpha);
+		$.ajax({
+	    	 dataType: "json",
+	         method: "GET",
+	         url: "/Project2/BrowsingTitle",
+	         data:{title: alpha},
+	         complete: (resultData) => handleResult(resultData, alpha)
+
+	    	//data = JSON.parse(resultData);
+	 	   // var userList = new List('movies', options, data);
+	        
+	     });
+	}
+	function Gbrowse(genre){
+		console.log(genre);
+		$.ajax({
+	    	 dataType: "json",
+	         method: "GET",
+	         url: "/Project2/BrowsingGenre",
+	         data:{genre: genre},
+	         complete: (resultData) => handleResult(resultData, genre)
+
+	    	//data = JSON.parse(resultData);
+	 	   // var userList = new List('movies', options, data);
+	        
+	     });
+	}
+</script>
+</html>

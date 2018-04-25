@@ -1,0 +1,399 @@
+.list {
+    font-family:sans-serif;
+    margin:0;
+    padding:20px 0 0;
+  }
+  .list > li {
+    display:block;
+    background-color: #eee;
+    padding:10px;
+    box-shadow: inset 0 1px 0 #fff;
+  }
+  .avatar {
+    max-width: 150px;
+  }
+  img {
+    max-width: 100%;
+  }
+  h3 {
+    font-size: 16px;
+    margin:0 0 0.3rem;
+    font-weight: normal;
+    font-weight:bold;
+  }
+  p {
+    margin:0;
+  }
+  
+  input {
+    border:solid 1px #ccc;
+    border-radius: 5px;
+    padding:7px 14px;
+    margin-bottom:10px
+  }
+  input:focus {
+    outline:none;
+    border-color:#aaa;
+  }
+  .sort {
+    padding:8px 30px;
+    border-radius: 6px;
+    border:none;
+    display:inline-block;
+    color:#fff;
+    text-decoration: none;
+    background-color: #000000;
+    height:30px;
+  }
+  .sort:hover {
+    text-decoration: none;
+    background-color:#1b8aba;
+  }
+  .sort:focus {
+    outline:none;
+  }
+  .sort:after {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    content:"";
+    position: relative;
+    top:-10px;
+    right:-5px;
+  }
+  .sort.asc:after {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #fff;
+    content:"";
+    position: relative;
+    top:13px;
+    right:-5px;
+  }
+  .sort.desc:after {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #fff;
+    content:"";
+    position: relative;
+    top:-10px;
+    right:-5px;
+  }
+  
+  :active, :focus {
+	outline-style: none;
+}
+
+a:link {
+	color: #cc8500;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #cc1400;
+	text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	font-size: 100%;
+}
+
+#site {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 0 1em;
+}
+
+#masthead {
+	margin-top: 3em;
+	padding: 2em 0 0.5em 0;
+	border-bottom: 1px solid #ddd;
+}
+
+#masthead h1 {
+	margin: 0;
+	font-size: 3.5em;
+	overflow: hidden;
+	padding-left: 85px;
+	min-height: 82px;
+	line-height: 2.3;
+	background: url(../images/logo.png) no-repeat 0 50%;
+	color: #900;
+	
+}
+
+.tagline {
+	float: right;
+	color: #666;
+	font-size: 14px;
+	padding-top: 3.5em;
+}
+
+#products ul {
+	margin: 1.5em 0;
+	padding: 0;
+	list-style: none;
+	overflow: hidden;
+}
+
+#products li {
+	float: left;
+	width: 31%;
+	margin: 0 1%;
+	display: block;
+}
+
+.product-image {
+	margin: 0 auto 1em auto;
+	background: #000;
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+	border-radius: 50%;
+	
+}
+
+.product-description {
+	padding: 1em;
+	background: #000;
+	color: #fff;
+	border-radius: 5px;
+}
+
+.product-name {
+	text-align: center;
+	color: #fc0;
+	margin: 0;
+	font-size: 1.4em;
+	padding-bottom: 0.2em;
+	border-bottom: 1px dotted #666;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+}
+
+form.add-to-cart div,
+form.add-to-cart p {
+	text-align: center;
+}
+
+form input.qty {
+	width: 40px;
+	border: 1px solid #eee;
+	font: 1em 'PT Serif', serif;
+	background: #f9f9f9;
+	color: #000;
+	border-radius: 3px;
+	margin-left: 0.4em;
+}
+
+.btn, a.btn {
+	display: inline-block;
+	background: #cc1400;
+	color: #fff;
+	font: 1em 'PT Serif', serif;
+	padding: 0.3em 1em;
+	text-align: center;
+	border-radius: 4px;
+	border: 1px solid #a00;
+}
+
+
+#site-info {
+	height: 3em;
+	width: 100%;
+	line-height: 3;
+	text-align: center;
+	background: #cc8500;
+	position: absolute;
+	color: #fff;
+	left: 0;
+	bottom: 0;
+}
+
+body#checkout-page #site-info {
+	position: static;
+}
+
+#shopping-cart {
+	margin: 1.5em 0;
+}
+
+.shopping-cart {
+	border: 1px solid #ddd;
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	table-layout: fixed;
+}
+
+.shopping-cart th {
+	font-size: 1.3em;
+	padding: 0.3em;
+	width: 33.3%;
+	border: 1px solid #ddd;
+	text-transform: uppercase;
+}
+
+.shopping-cart td {
+	padding: 0.3em;
+	width: 33.3%;
+	border: 1px solid #ddd;
+}
+
+.shopping-cart tr:nth-child(even) {
+	background: #fafafa;
+},
+
+.shopping-cart td.pdelete {
+	text-align: center;
+}
+
+.pdelete a,
+.pdelete a:hover {
+	color: #c00;
+	text-decoration: none;
+	font-size: 2.5em;
+	display: block;
+	text-align: center;
+}
+
+#shopping-cart-actions {
+	margin: 1.5em 0;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+}
+
+#shopping-cart-actions li {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+
+
+#sub-total, #shipping {
+	margin: 1.5em 0;
+	text-align: right;
+}
+
+#sub-total span,
+#shipping span {
+	margin-left: 1em;
+}
+
+#content > h1,
+#checkout-order-form h2 {
+	font-size: 2em;
+	text-align: center;
+}
+
+#checkout-order-form {
+	margin: 1.5em 0;
+}
+
+#checkout-order-form fieldset {
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	padding: 1em;
+	margin-bottom: 1.3em;
+}
+
+#checkout-order-form legend {
+	padding: 0.3em;
+	background: #fafafa;
+	font-weight: bold;
+}
+
+#checkout-order-form div {
+	margin-bottom: 1em;
+}
+
+#checkout-order-form label {
+	display: block;
+	font-weight: bold;
+	margin-bottom: 0.3em;
+	text-align: left;
+}
+
+#checkout-order-form input[type="text"] {
+	width: 200px;
+	display: block;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 0.3em;
+}
+
+#checkout-order-form select {
+	width: 200px;
+	display: block;
+}
+
+.message {
+	display: block;
+	margin: 0.5em 0;
+	color: red;
+}
+
+#user-details {
+	margin: 1.5em 0;
+}
+
+#user-details > h2 {
+	text-align: center;
+	font-size: 2em;
+}
+
+#user-details-content {
+	margin: 1.5em 0;
+	padding: 1em;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	overflow: hidden;
+}
+
+#user-details-content .detail {
+	float: left;
+	width: 46%;
+}
+
+#user-details-content .detail.right {
+	float: right;
+}
+
+#user-details-content .detail > h2 {
+	text-align: center;
+	font-size: 1.6em;
+	margin-bottom: 0.5em;
+}
+
+#user-details-content ul {
+	margin: 0 0 1em 0;
+	padding: 0;
+	list-style: none;
+}
+
+#user-details-content li {
+	display: block;
+	margin-bottom: 0.5em;
+	padding-bottom: 0.3em;
+	border-bottom: 1px solid #ddd;
+}
+
+#paypal-form {
+	margin: 1.5em 0;
+}
+
+label {
+	text-align: right;
+    clear: both;
+    float:left;
+    margin-right:15px;
+}

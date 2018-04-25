@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Search and Sort Page for BestMovies.com">
+
+    <!--for Bootstrap modal-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+   	<link rel="stylesheet" type="text/css" href="/Project2/Style/SortAndSearch.css">
+      
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <meta name="author" content="Cher Huang, G">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script type="text/javascript" src="/Project2/js/cart.js"></script>    
+    <title>Search and Sort Page</title>
+</head>
+
+<body>
+   <nav id="head-navbar" class="navbar navbar-dark bg-info fixed-top">
+      <ul class="nav navbar-nav">
+              <li><a class="nav-link topnav active" href="SortAndSearch.html">Search</a></li>
+               <li><a class="nav-link" href="browse.html">Browse</a></li>
+               <li><a class="nav-link" href="cart.html">My Shopping Cart</a></li>
+               <li><a class="nav-link" href="login.html">Logout</a></li>
+        </ul>
+    </nav>
+    <div  class="spacer">
+    &nbsp;
+   </div>
+   
+  <div id="movies" style="margin-top:175px">
+
+      <h3>Searching</h3>
+       Search:    <input type="text" name="title" id="title"> <BR>
+         	<table id=auto_search_table class="table table-striped">
+		<thead>
+			<tr>
+				<th></th>
+          </tr>
+		</thead>
+		<tbody id=auto_table_body>
+		</tbody>
+	</table>
+
+     
+     
+     <button type="submit" id="form1" value="submit" >SUBMIT</button>  
+      
+     
+  </div>
+  
+  	<table id=search_table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Year</th>
+				<th>Director</th>
+				<th>Rating</th>
+                <th>Genres</th>
+                <th>Stars</th>
+                <th>Add To Cart</th>
+          </tr>
+		</thead>
+		<tbody id=search_table_body>
+		</tbody>
+	</table>
+  
+  
+  
+  
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+<script src="./js/SearchAuto.js"></script>
+</html>

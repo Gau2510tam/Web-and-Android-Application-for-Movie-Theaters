@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+
+    <!--for Bootstrap modal-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="/Project2/Style/csshake.min.css">
+
+    <link href="/Project2/Style/style.css" rel="stylesheet" type="text/css">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <meta name="author" content="Cher Huang, G">
+
+
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather">
+    <title>Top Movies</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/Project2/Style/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <style>
+      body {
+        padding-top: 54px;
+      }
+      @media (min-width: 992px) {
+        body {
+          padding-top: 56px;
+        }
+      }
+
+    </style>
+
+    <!--Firebase CSS -->
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+  </head>
+
+  <body id="loginBody">
+
+
+           <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            
+          </div>
+        </div>
+      </div>
+
+    <section class="canvas-wrap">
+      <div class="canvas-content">
+      <p class="logoText" style ="font-family:Merriweather script=all rev=2;font-weight: 700;font-color:white; font-style: italic; margin-bottom:0px;">BestMovies.com</p>
+
+      <h2 style="font-family:Merriweather script=all rev=2;font-weight: 100;color:white;margin: 0 auto; width: 600px; font-size: 24px; text-align: center;"> Find the best movie. <br></h2>
+  </div>
+      <div id="canvas" ></div>
+    </section>
+     <!-- Bootstrap core JavaScript -->
+ <script src="/Project2/Style/vendor/jquery/jquery.min.js"></script>
+ <script src="/Project2/Style/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Main library -->
+<script src="/Project2/js/three.min.js"></script>
+
+<!-- Helpers -->
+<script src="/Project2/js/projector.js"></script>
+<script src="/Project2/js/canvas-renderer.js"></script>
+
+<!-- Visualitzation adjustments -->
+<script src="/Project2/js/3d-lines-animation.js"></script>
+
+<!-- Animated background color -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="/Project2/js/color.js"></script>
+        
+
+
+<div class="container">
+        <div class="card card-container">
+            <FORM ACTION="Login"
+      METHOD="POST">
+      <h3> LOGIN 	</h3>
+  E-mail:    <INPUT TYPE="TEXT" NAME="email"> <BR>
+  
+  Password:  <INPUT TYPE="Password" NAME="password"><BR>
+  
+  Login Type : <select name="type" id="type">
+               <option value="1">Customer_Login</option>
+               <option value="2">Employee_Login</option>
+               </select>
+     		<div class="g-recaptcha" data-sitekey="6LdIA0cUAAAAACRu5NUpcdJp3_yCpDAK9CgoO7D8"></div>
+     
+     
+      <CENTER>
+    <INPUT TYPE="SUBMIT" VALUE="SUBMIT">
+     </CENTER>
+     
+     </FORM>
+        </div><!-- /card-container -->
+    </div><!-- /container -->
+
+</body>  
+
+<script type="text/javascript">
+  // Initialize Firebase according to our project specifications
+ 
+
+
+  /**
+  * Handles sign in button press
+  */
+
+  function toggleSignIn() {
+    if(firebase.auth().currentUser) { //if someone is signed in already
+            document.getElementById('signInButt').disabled=false;
+             firebase.auth().signOut(); // they're clicking to sign out
+
+    } else { // somebody wants to sign in 
+      var email = document.getElementById('emailInput').value;
+      var password = document.getElementById('passwordInput').value;
+
+      if(email.length < 4) {
+        alert('Please enter an email address.');
+        return;
+      }
+
+      if (password.length < 4) {
+        alert('Please enter a password');
+        return;
+      }
+      
+     
+      // END authwithemail
+    }
+
+  // CALLED WHEN USER PRESSES SIGN IN WITH GOOGLE
+  
+
+
+  /*
+  * Handles sign up button press 
+  */
+  
+
+    // END createwithemail
+  }
+
+
+  
+  
+      initApp();
+
+</script>
+
+</html>
